@@ -20,7 +20,11 @@
         "njpwerner.autodocstring",
         "shardulm94.trailing-spaces",
         "tamasfe.even-better-toml",
-        "yzhang.markdown-all-in-one"
+        "yzhang.markdown-all-in-one",
+        "bierner.github-markdown-preview",
+        "DavidAnson.vscode-markdownlint",
+        "esbenp.prettier-vscode",
+        "redhat.vscode-yaml"
       ]
     }
   },
