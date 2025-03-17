@@ -1,0 +1,112 @@
+[project]
+name = "edp-workshop"
+version = "0.1.0"
+description = "EDP workshop toy project."
+readme = "README.md"
+requires-python = ">=3.12.3"
+dependencies = [
+    "dlt[duckdb,parquet]>=1.8.1",
+]
+
+[dependency-groups]
+dev = ["ruff>=0.11.0"]
+
+[tool.uv]
+package = true
+
+[tool.ruff.lint]
+extend-select = [
+    "I",    # isort
+    "D",    # pydocstyle
+    "W",    # pycodestyle (warnings)
+    "B",    # flake8-bugbear
+    "S",    # flake8-bandit
+    "ANN",  # flake8-annotations
+    "A",    # flake8-builtins
+    "C4",   # flake8-comprehensions
+    "EM",   # flake8-errmsg
+    "T20",  # flake8-print
+    "PT",   # flake8-pytest-style
+    "RET",  # flake8-return
+    "SIM",  # flake8-simplify
+    "ARG",  # flake8-unused-arguments
+    "PTH",  # flake8-use-pathlib
+    "N",    # pep8-naming
+    "UP",   # pyupgrade
+    "C901", # mccabe
+    "FURB", # refurb
+    "TRY",  # tryceratops
+    # "PD", # https://docs.astral.sh/ruff/rules/#pandas-vet-pd
+    "PL",  # pylint
+    "RUF", # Ruff-specific rules
+]
+
+# Ignore rules known to be conflicting between the ruff linter and formatter.
+# See https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+ignore = [
+    "W191",
+    "D206",
+    "D101",   # Public class docstring - document the init instead.
+    "D300",
+    "ANN101", # `self` type hints.
+    "ANN102", # Type annotation for `cls`.
+    "ANN204", # `self` return type.
+]
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.lint.extend-per-file-ignores]
+# S101: use of assert error
+# ANN201, ANN202, ANN001: missing typing
+# D103: missing function docstrings
+# D100: missing module docstring
+# N802, N803: caps lock argument and function names (disabled to allow naming fixtures in all caps)
+"tests/**" = [
+    "S101",
+    "ANN201",
+    "ANN202",
+    "ANN001",
+    "D103",
+    "D100",
+    "N802",
+    "N803",
+]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
+[tool.ruff.lint.pylint]
+# Max number of function arguments. Default is 5, which seems overly restrictive.
+max-args = 7
+
+[tool.ruff.lint.isort]
+force-sort-within-sections = true
+lines-after-imports = 2
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.pycodestyle]
+max-doc-length = 88
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+# For checking whether the docstrings match function signature.
+# https://peps.python.org/pep-0727/ should basically solve this in Python 3.13.
+[tool.pydoclint]
+style = "google"
+arg-type-hints-in-docstring = false
+check-return-types = false
+check-yield-types = false
+allow-init-docstring = true
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/edp_workshop"]

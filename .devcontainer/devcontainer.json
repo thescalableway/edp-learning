@@ -1,0 +1,37 @@
+{
+  "name": "Python Workshop",
+  "build": {
+    "context": "..",
+    "dockerfile": "Dockerfile",
+    "args": {
+      "UV_VERSION": "latest",
+      "DEBIAN_VERSION": "bookworm"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python"
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "charliermarsh.ruff",
+        "njpwerner.autodocstring",
+        "shardulm94.trailing-spaces",
+        "tamasfe.even-better-toml",
+        "yzhang.markdown-all-in-one"
+      ]
+    }
+  },
+  "postCreateCommand": "uv sync --frozen",
+  "postStartCommand": "uv run pre-commit install",
+  "forwardPorts": [8000],
+  "remoteUser": "vscode",
+  "containerEnv": {
+    "DISPLAY": "dummy",
+    "PYTHONUNBUFFERED": "True",
+    "UV_LINK_MODE": "copy",
+    "UV_PROJECT_ENVIRONMENT": "/home/vscode/.venv"
+  }
+}
