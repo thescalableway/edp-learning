@@ -11,11 +11,26 @@
   "customizations": {
     "vscode": {
       "settings": {
-        "python.defaultInterpreterPath": "/usr/local/bin/python"
+        "python.terminal.activateEnvInCurrentTerminal": true,
+        "python.pythonPath": "${workspaceFolder}/.venv/bin/python",
+        "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+        "python.autoComplete.extraPaths": ["${workspaceFolder}/src"],
+        "python.analysis.typeCheckingMode": "basic",
+        "editor.rulers": [88],
+        "files.exclude": {
+          "**/*.egg-info/": true,
+          ".gnupg/": true,
+          ".ssh/": true,
+          ".local/": true,
+          ".venv/": true,
+          ".vscode-server/": true
+        },
+        "terminal.integrated.defaultProfile.linux": "bash"
       },
       "extensions": [
         "ms-python.python",
         "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter",
         "charliermarsh.ruff",
         "njpwerner.autodocstring",
         "shardulm94.trailing-spaces",
@@ -24,18 +39,16 @@
         "bierner.github-markdown-preview",
         "DavidAnson.vscode-markdownlint",
         "esbenp.prettier-vscode",
-        "redhat.vscode-yaml"
+        "redhat.vscode-yaml",
+        "seatonjiang.gitmoji-vscode"
       ]
     }
   },
-  "postCreateCommand": "uv sync --frozen",
+  "postCreateCommand": "uv sync --frozen && rm -rf src/edp_workshop.egg-info && . .venv/bin/activate",
   "postStartCommand": "uv run pre-commit install",
-  "forwardPorts": [8000],
   "remoteUser": "vscode",
   "containerEnv": {
-    "DISPLAY": "dummy",
-    "PYTHONUNBUFFERED": "True",
-    "UV_LINK_MODE": "copy",
-    "UV_PROJECT_ENVIRONMENT": "/home/vscode/.venv"
+    "UV_PROJECT_ENVIRONMENT": "/workspaces/edp-workshop/.venv"
+    // "GITHUB_TOKEN": "${localEnv:GITHUB_TOKEN}"
   }
 }
