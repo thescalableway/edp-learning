@@ -6,10 +6,15 @@ readme = "README.md"
 requires-python = ">=3.12.3"
 dependencies = [
     "dlt[duckdb,parquet]>=1.8.1",
+    "faker>=37.0.0",
+    "ipykernel>=6.29.5",
 ]
 
 [dependency-groups]
-dev = ["ruff>=0.11.0"]
+dev = [
+    "pre-commit>=4.1.0",
+    "ruff>=0.11.0",
+]
 
 [tool.uv]
 package = true

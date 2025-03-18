@@ -172,3 +172,10 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# System stuff
+.vscode-server
+*.duckdb
+.gitconfig
+.gnupg
+.ssh
