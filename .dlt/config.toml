@@ -9,7 +9,7 @@ dlthub_telemetry = true
 
 # [normalize.data_writer]
 # Disable the default gzip compression, so that local datasets are easily readable.
-# disable_compression=true
+# disable_compression = true
 
 # [normalize.parquet_normalizer]
 # Add a record extraction timestamp.
