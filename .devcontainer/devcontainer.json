@@ -16,6 +16,7 @@
         "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
         "python.autoComplete.extraPaths": ["${workspaceFolder}/src"],
         "python.analysis.typeCheckingMode": "basic",
+        "jupyter.notebookFileRoot": "${workspaceFolder}",
         "editor.rulers": [88],
         "files.exclude": {
           "**/*.egg-info/": true,
