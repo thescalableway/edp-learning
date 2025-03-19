@@ -1,0 +1,26 @@
+[runtime]
+# Comment this out for less verbose logging.
+# log_level = "INFO"
+# use the dlthub_telemetry setting to enable/disable anonymous usage data reporting, see https://dlthub.com/docs/reference/telemetry
+dlthub_telemetry = true
+
+# [normalize]
+# loader_file_format = "parquet"
+
+# [normalize.data_writer]
+# Disable the default gzip compression, so that local datasets are easily readable.
+# disable_compression=true
+
+# [normalize.parquet_normalizer]
+# Add a record extraction timestamp.
+# add_dlt_load_id = true
+
+# [destination.relative_destination]
+# A relative local path for the `filesystem` destination.
+# bucket_url = "data/"
+
+# [destination.filesystem]
+# Whether to truncate staging tables in the staging area.
+# For example, if using filesystem as staging, previously created files will be deleted.
+# See https://dlthub.com/docs/dlt-ecosystem/staging#how-to-prevent-staging-files-truncation.
+# truncate_tables_on_staging_destination_before_load = false
