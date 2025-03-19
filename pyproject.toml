@@ -19,6 +19,9 @@ dev = [
 [tool.uv]
 package = true
 
+[tool.ruff]
+extend-exclude = ["tutorials"]
+
 [tool.ruff.lint]
 extend-select = [
     "I",    # isort
