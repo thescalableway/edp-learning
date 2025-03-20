@@ -45,11 +45,11 @@
       ]
     }
   },
-  "postCreateCommand": "uv sync --frozen && rm -rf src/edp_workshop.egg-info && . .venv/bin/activate",
+  "postCreateCommand": "uv sync --frozen && rm -rf src/edp_learning.egg-info && . .venv/bin/activate",
   "postStartCommand": "uv run pre-commit install",
   "remoteUser": "vscode",
   "containerEnv": {
-    "UV_PROJECT_ENVIRONMENT": "/workspaces/edp-workshop/.venv"
+    "UV_PROJECT_ENVIRONMENT": "/workspaces/edp-learning/.venv"
     // "GITHUB_TOKEN": "${localEnv:GITHUB_TOKEN}"
   }
 }
