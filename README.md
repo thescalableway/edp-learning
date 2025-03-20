@@ -6,7 +6,7 @@ This repository is designed for learning data engineering best practices using t
 - Prefect
 - Python
 
-Lessons are developed on an as-needed basis, with several already available for you to explore. Check out the tutorials section to get started!
+Lessons are developed on an as-needed basis, with several already available for you to explore. Check out the lessons folder to get started!
 
 Each lesson is self-contained and leverages public data sources, so you don’t need any specific data platform infrastructure. In fact, you can follow along directly from GitHub using Codespaces for a seamless learning experience.
 

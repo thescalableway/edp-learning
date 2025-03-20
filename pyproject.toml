@@ -17,7 +17,7 @@ dev = ["pre-commit>=4.1.0", "ruff>=0.11.0"]
 package = true
 
 [tool.ruff]
-extend-exclude = ["tutorials"]
+extend-exclude = ["lessons"]
 
 [tool.ruff.lint]
 extend-select = [
