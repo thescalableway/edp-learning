@@ -24,7 +24,8 @@
           ".ssh/": true,
           ".local/": true,
           ".venv/": true,
-          ".vscode-server/": true
+          ".vscode-server/": true,
+          ".ruff_cache/": true
         },
         "terminal.integrated.defaultProfile.linux": "bash"
       },
