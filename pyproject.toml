@@ -5,7 +5,7 @@ description = "EDP learning materials."
 readme = "README.md"
 requires-python = ">=3.12.3"
 dependencies = [
-    "dlt[duckdb,parquet]>=1.8.1",
+    "dlt[duckdb,parquet]>=1.12.1",
     "faker>=37.0.0",
     "ipykernel>=6.29.5",
 ]
