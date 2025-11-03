@@ -4,11 +4,8 @@
 # use the dlthub_telemetry setting to enable/disable anonymous usage data reporting, see https://dlthub.com/docs/reference/telemetry
 dlthub_telemetry = true
 
-# [normalize]
-# loader_file_format = "parquet"
-
-# [normalize.data_writer]
 # Disable the default gzip compression, so that local datasets are easily readable.
+# [normalize.data_writer]
 # disable_compression = true
 
 # [normalize.parquet_normalizer]
